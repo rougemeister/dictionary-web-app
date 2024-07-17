@@ -17,13 +17,15 @@
 
 select {
     margin-right: 15px;
+    padding-right: 10px;
     border: none;
     background-color: white;
     font-size: 15px;
     font-weight: bold;
     outline: none;
+    text-align: right;
 }
 
-select option {
-    border: none;
+option {
+    padding: 50px;
 }
