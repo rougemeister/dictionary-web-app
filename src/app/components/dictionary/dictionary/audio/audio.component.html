@@ -1,0 +1,4 @@
+<div (click)="audi.play()" class="player-container">
+    <img src="assets/images/icon-play.svg" alt="" srcset="">
+</div>
+<audio #audi [src]="dataService.currentWord.phonetics[0].audio"></audio>
