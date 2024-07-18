@@ -102,14 +102,14 @@ export class DataService {
         },
         (err) => {
             this.httpError = err.error;
-            // console.log(err)
+            console.log(err)
         }
   )}
   toggleTheme(){
     this.lightThemeSet = !this.lightThemeSet
     this.lightThemeSet ?
     this.currentTheme="dark-mode":
-    this.currentTheme="light-mode" 
-    console.log('curr theme is :'+this.currentTheme);
+    this.currentTheme="light-mode" ;
+    
   }
 }

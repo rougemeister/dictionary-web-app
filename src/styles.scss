@@ -10,11 +10,12 @@
     --grey-level-6:#2B2D31;
     --grey-level-7:#1F1F1F;
     --grey-level-8:#050505;
-    --voilet:#a445ED;
+    --voilet:#A445ED;
     --warn:#FF5252;
 }
-body{
+html, body{
     margin: 0;
+    height: 100%;
 }
 .heading-l{
     font-size: 34px;
@@ -23,7 +24,7 @@ body{
 }
 .heading-m{
     font-size: 1.5rem;
-    line-height: 29px;
+    line-height: 1.2;
 }
 .heading-s{
     font-size: 20px;
@@ -59,31 +60,65 @@ body{
     }
 }
 .dark-mode{
+    body {
+        background-color: var(--grey-level-8);
+    }
     color: var(--grey-level-1);
     background-color: var(--grey-level-8);
     .type-meaning, .synonyms, .examples{
         color: var(--grey-level-3);
     }
+
+    .select-dropdown{
+        background-color: var(--grey-level-5s);
+        color: white;
+        box-shadow: 0 0 5px var(--grey-level-2);
+    }
     .switch-toggle{
         background-color: var(--voilet);
     }
+
+    .search-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+        border-radius: 1rem;
+        background-color: var(--grey-level-5);
+        padding: 0 16px;
+        
+        input{
+            height: 55px;
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+        }
+        input:focus{
+            outline: none;
+        }
+    }
+
+
 }
-@media only screen and (min-width: 768px) {
-    .heading-l{
-    font-size: 4rem;
-    line-height: 72px;
-    font-weight: bold;
-}
-.heading-m{
-    font-size: 1.5rem;
-    line-height: 29px;
-}
-.heading-s{
-    font-size: 20px;
-    line-height: 24px;
-}
-.body-m{
-    font-size: 18px;
-    line-height: 24px;
-}
+
+
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    border-radius: 1rem;
+    background-color: var(--grey-level-1);
+    padding: 0 16px;
+    
+    input{
+        height: 55px;
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+    }
+    input:focus{
+        outline: none;
+    }
 }

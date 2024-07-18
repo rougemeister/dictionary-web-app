@@ -50,3 +50,20 @@
         text-decoration: underline;
     }
 }
+
+.heading-s{
+    color: #757575;
+}
+
+.heading-s.synonym-list,
+.phonetic {
+    color: var(--voilet);
+}
+
+.source-heading{
+    margin-bottom: 5px;
+}
+.source a {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
