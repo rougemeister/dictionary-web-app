@@ -50,7 +50,13 @@ html, body{
 .hide{
     display: none;
 }
+
+li::marker {
+    color: var(--voilet);
+}
 .light-mode{
+ 
+    transition: 0.1s;
     .switch-toggle{
         background-color: var(--grey-level-3);
     }
@@ -60,15 +66,14 @@ html, body{
     }
 }
 .dark-mode{
-    body {
-        background-color: var(--grey-level-8);
-    }
+    transition: 0.1s;
     color: var(--grey-level-1);
     background-color: var(--grey-level-8);
     .type-meaning, .synonyms, .examples{
         color: var(--grey-level-3);
     }
 
+    
     .select-dropdown{
         background-color: var(--grey-level-5s);
         color: white;
@@ -77,6 +82,12 @@ html, body{
     .switch-toggle{
         background-color: var(--voilet);
     }
+
+
+    .moon {
+        fill: var(--voilet)
+    }
+
 
     .search-container{
         display: flex;
@@ -99,8 +110,15 @@ html, body{
         }
     }
 
+    .link {
+        color: var(--white);
+    }
+
+    
+
 
 }
+
 
 
 .search-container{
@@ -114,6 +132,7 @@ html, body{
     
     input{
         height: 55px;
+        width: 100%;
         border: none;
         background-color: transparent;
         font-weight: bold;
@@ -121,4 +140,32 @@ html, body{
     input:focus{
         outline: none;
     }
+}
+
+
+
+.link {
+    color: black;
+}
+
+
+.link:active,
+.link:focus {
+    color: var(--voilet);
+}
+
+.link:hover {
+    color: #757575;
+}
+
+
+
+
+
+
+.emoji {
+    font-size: 3rem;
+}
+.error-message {
+    font-size: 1.2rem;
 }

@@ -7,10 +7,11 @@
         <app-audio-player></app-audio-player>
     </div>
     @if (dataService.httpError.message!.length>0) {
+     
         <div class="definition-404">
-            <span>😕</span>
-            <p>{{dataService.httpError.message}}</p>
-            <p>{{dataService.httpError.resolution}}</p>
+            <span class="emoji">😕</span>
+            <p class="error-message">{{dataService.httpError.message}} {{dataService.httpError.resolution}}</p>
+
         </div>
     }
     @else {
@@ -22,7 +23,7 @@
                 <span class="type-meaning heading-s">Meaning</span>
                 <ul>
                     @for (def of meaning.definitions; track def) {
-                        <li class="flex-it definition-items">
+                        <li class="definition-items">
                             <span class="body-m">{{def.definition}}</span>
                         </li>
                         <p>
@@ -47,7 +48,7 @@
         <div class="source flex-it w-100 body-s">
             <span class="source-heading heading-s">source</span>
             @if (dataService.currentWord.sourceUrls && dataService.currentWord.sourceUrls.length>0) {
-                <a>{{dataService.currentWord.sourceUrls[0]}}</a>
+                <a class="link" target="_blank" [href]="dataService.currentWord.sourceUrls[0]">{{dataService.currentWord.sourceUrls[0]}}</a>
             }
         </div>
     }

@@ -29,6 +29,7 @@
 }
 .hr{
     height: 1px;
+    margin-bottom: 6px;
     background-color: var(--grey-level-2);
 }
 .hr-margin{
@@ -67,3 +68,8 @@
     font-size: 1rem;
     margin-bottom: 10px;
 }
+
+.definition-404 {
+    text-align: center;
+}
+

@@ -102,7 +102,7 @@ export class DataService {
         },
         (err) => {
             this.httpError = err.error;
-            console.log(err)
+            console.log(err.error.message)
         }
   )}
   toggleTheme(){
@@ -110,6 +110,12 @@ export class DataService {
     this.lightThemeSet ?
     this.currentTheme="dark-mode":
     this.currentTheme="light-mode" ;
+
+    if (this.lightThemeSet) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
     
   }
 }
