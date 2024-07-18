@@ -1,20 +1,23 @@
 .container {
     display: flex;
+    width: 100%;
 }
 
 .search-container {
-    background-color: #CDCDCD;
+    width: inherit;
+    margin-top: 15px;
+    background-color: #F4F4F4;
     border-radius: 16px;
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 48px;
     transition: 0.8s;
 
 }
 
 .container:hover input {
-    width: 330px;
+    width: inherit;
     padding: 10px;
     outline: none;
 }
@@ -23,8 +26,8 @@
     background-color: transparent;
     border: none;
     width: 0;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 800;
+    font-size: 20px;
     transition: 0.8s;
     outline: none;
 
