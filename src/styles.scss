@@ -1,9 +1,89 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --white:#FFFFFF;
+    --navbar-bg:#2B2D31;
+    --grey-level-1:#F4F4F4;
+    --grey-level-2:#E9E9E9;
+    --grey-level-3:#757575;
+    --grey-level-4:#3A3A3A;
+    --grey-level-5:#2D2D2D;
+    --grey-level-6:#2B2D31;
+    --grey-level-7:#1F1F1F;
+    --grey-level-8:#050505;
+    --voilet:#a445ED;
+    --warn:#FF5252;
 }
-
-body {
-    height: 100vh;
+body{
+    margin: 0;
+}
+.heading-l{
+    font-size: 34px;
+    line-height: 72px;
+    font-weight: bold;
+}
+.heading-m{
+    font-size: 1.5rem;
+    line-height: 29px;
+}
+.heading-s{
+    font-size: 20px;
+    line-height: 24px;
+}
+.body-m{
+    font-size: 18px;
+    line-height: 24px;
+}
+.body-s{
+    font-size: 14px;
+    line-height: 17px;
+}
+.flex-it{
+    display: flex;
+}
+.w-100{
+    width: 100%;
+}
+.show{
+    display: flex;
+}
+.hide{
+    display: none;
+}
+.light-mode{
+    .switch-toggle{
+        background-color: var(--grey-level-3);
+    }
+    .select-dropdown{
+        background-color: white;
+        box-shadow: 0 2px 10px 5px var(--grey-level-2);
+    }
+}
+.dark-mode{
+    color: var(--grey-level-1);
+    background-color: var(--grey-level-8);
+    .type-meaning, .synonyms, .examples{
+        color: var(--grey-level-3);
+    }
+    .switch-toggle{
+        background-color: var(--voilet);
+    }
+}
+@media only screen and (min-width: 768px) {
+    .heading-l{
+    font-size: 4rem;
+    line-height: 72px;
+    font-weight: bold;
+}
+.heading-m{
+    font-size: 1.5rem;
+    line-height: 29px;
+}
+.heading-s{
+    font-size: 20px;
+    line-height: 24px;
+}
+.body-m{
+    font-size: 18px;
+    line-height: 24px;
+}
 }

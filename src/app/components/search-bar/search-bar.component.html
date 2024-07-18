@@ -1,0 +1,4 @@
+<div [class]="dataService.currentTheme" class="search-container">
+    <input class="heading-s" [(ngModel)]="dataService.searchTerm" placeholder="Search for any word…" (keydown.enter)="dataService.getNewWord()" type="text">
+    <img (click)="dataService.getNewWord()" src="assets/images/icon-search.svg" alt=" search-icon" srcset="">
+</div>

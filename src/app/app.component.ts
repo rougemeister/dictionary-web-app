@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from './nav/nav.component';
-import { SearchComponent } from './search/search.component';
-import { CardComponent } from "./card/card.component";
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { DictionaryComponent } from './components/dictionary/dictionary/dictionary.component';
+import { DataService } from './services/data.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-rooted',
   standalone: true,
-  imports: [RouterOutlet, NavComponent, SearchComponent, CardComponent],
+  imports: [RouterOutlet, ToolbarComponent, DictionaryComponent, SearchBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'dictionary-web-app';
+  constructor(public dataService:DataService){}
 }

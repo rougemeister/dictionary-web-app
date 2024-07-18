@@ -1,0 +1,10 @@
+<div (click)="dataService.toggleTheme()" [class]="dataService.currentTheme" class="theme-switcher">
+    <div class="switch-toggle">
+        <span 
+            [class]="dataService.lightThemeSet? 
+            'switch-to-light':'switch-to-dark'"  
+            class="toggler"></span>
+    </div>
+    <img src="assets/images/icon-moon.svg" alt="" srcset="">
+</div>
+<!-- <img src="assets/dark-mode-icon.svg" alt="" srcset=""> -->

@@ -1,0 +1,54 @@
+<div [class]="dataService.currentTheme" class="keyword-container align-c flex-it">
+    <div class="col w-100 align-c flex-it">
+        <div class="word flex-it">
+            <span class="heading-l">{{dataService.currentWord.word}}</span>
+            <span class="phonetic heading-m">{{dataService.currentWord.phonetic}}</span>
+        </div>
+        <app-audio-player></app-audio-player>
+    </div>
+    @if (dataService.httpError.message!.length>0) {
+        <div class="definition-404">
+            <span>😕</span>
+            <p>{{dataService.httpError.message}}</p>
+            <p>{{dataService.httpError.resolution}}</p>
+        </div>
+    }
+    @else {
+        @for(meaning of dataService.currentWord.meanings; track meaning){
+            <div class="types flex-it">
+                <span class="type-name heading-m flex-it">{{meaning.partOfSpeech}}
+                    <span class="hr w-100 flex-it"></span>
+                </span>
+                <span class="type-meaning heading-s">Meaning</span>
+                <ul>
+                    @for (def of meaning.definitions; track def) {
+                        <li class="flex-it definition-items">
+                            <span class="body-m">{{def.definition}}</span>
+                        </li>
+                        <p>
+                            <span class="examples">{{def.example}}</span>
+                        </p>
+                    }
+                </ul>
+                <div class="synonyms flex-it w-100">
+                    @if(meaning.synonyms?.length){
+                        <span class="synonym-name heading-s">Synonyms</span>
+                    }
+                    @for (synonym of meaning.synonyms; track synonym;) {
+                        <span class="synonym-list heading-s">{{synonym}}</span>
+                    }
+                </div>
+            </div>
+        }
+        <!-- <hr> -->
+         <div class="types flex-it">
+                <span class="hr w-100 flex-it hr-margin"></span>
+         </div>
+        <div class="source flex-it w-100 body-s">
+            <span>source</span>
+            @if (dataService.currentWord.sourceUrls && dataService.currentWord.sourceUrls.length>0) {
+                <a>{{dataService.currentWord.sourceUrls[0]}}</a>
+            }
+        </div>
+    }
+</div>

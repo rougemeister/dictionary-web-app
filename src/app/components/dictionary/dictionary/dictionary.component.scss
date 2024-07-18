@@ -1,0 +1,52 @@
+.keyword-container{
+    justify-content: space-between;
+    width: 100%;
+    height: 114px;
+    flex-direction: column;
+    .word{
+        flex-direction: column;
+    }
+}
+.types{
+    flex-direction: column;
+    width: 100%;
+}
+.type-name{
+    align-items: center;
+    gap: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    margin: 35px 0;
+}
+.type-meaning{
+    ul{
+        margin:17px 0 24px;
+    }
+}
+
+.synonyms{
+    gap: 40px;
+}
+.hr{
+    height: 1px;
+    background-color: var(--grey-level-2);
+}
+.hr-margin{
+    margin: 25px 0;
+}
+.col{
+    justify-content: space-between;
+}
+.align-c{
+    align-items: center;
+}
+
+.synonym-list{
+    font-weight: bold;
+}
+.source{
+    flex-direction: column;
+    & :first-child{
+        text-decoration: underline;
+    }
+}
