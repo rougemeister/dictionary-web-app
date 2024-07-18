@@ -1,0 +1,75 @@
+.word-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-top: 15px;
+}
+.word-title {
+    margin-bottom: 8px;
+}
+
+
+.transcript,
+.synonym {
+    color: #A445ED;
+}
+
+.part-of-speech {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.part-of-speech div {
+    border-top: 1px solid #E9E9E9;
+    width: 100%;
+    padding-top: 6px;
+}
+
+.meaning p {
+    margin: 15px 0;
+
+}
+
+.synonym > p,
+.meaning > p {
+    color: #757575;
+}
+
+.synonym-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.synonym {
+    font-weight: 800;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+li {
+    padding: 5px;
+    line-height: 1.5;
+}
+.meaning li::marker {
+    color: #A445ED;
+  } 
+
+li span {
+    display: inline-block;
+    color: #757575;
+}
+
+.bottom {
+    border-bottom: 1px solid #E9E9E9;
+    padding-bottom: 10px;
+}
+
+.source-title {
+    color: #757575;
+    text-decoration: underline;
+}
