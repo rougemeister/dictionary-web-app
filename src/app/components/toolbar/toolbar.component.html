@@ -1,17 +1,18 @@
 <div [class]="dataService.currentTheme" class="main-container">
     <img src="assets/images/logo.svg" alt="Logo icon" class="logo">
     <div class="right-container">
-        <div (click)="toggleDropdown()" class="flex-it">
-            <label class="heading-s" for="select">{{dataService.selectedFont}}</label>
+        <div (click)="dataService.toggleDropdown()" class="flex-it">
+            <label class="heading-s" for="select">{{dataService.selectedFont.name}}</label>
             <img src="assets/images/select-icon.svg" alt="" srcset="">
         </div>
         <div class="drop-down">
-            <div [class]="showDropDown ? 'show':'hide'" class="select-dropdown flex-it">
+            <div [class]="dataService.showDropDown ? 'show':'hide'" class="select-dropdown flex-it">
                 @for (font of dataService.fontFamilies; track font) {
-                    <span class="heading-s">{{font}}</span>
+                    <span (click)="dataService.changeFont($event)" class="heading-s">{{font}}</span>
                 }
             </div>
         </div>
+      
         <app-theme-toggler class="theme-toggler"></app-theme-toggler>
     </div>
 </div>

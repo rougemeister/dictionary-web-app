@@ -9,8 +9,10 @@ export class DataService {
   searchTerm:string='';
   lightThemeSet:boolean = false;
   currentTheme:string='light-mode';
-  selectedFont:string='mono'
+  selectedFont={name:'mono', value:""}
   fontFamilies:string[]=['sans serif','serif','mono']
+  showDropDown:boolean = false
+  
   httpError:Respose404Error={
     message:'',
     title:'',
@@ -87,6 +89,8 @@ export class DataService {
         ]
     }
 
+    
+
   constructor(private apiService:ApiService) { }
   getNewWord(){
     this.apiService.getWord(this.searchTerm).subscribe(
@@ -117,5 +121,30 @@ export class DataService {
       document.body.classList.remove('dark-mode');
     }
     
+  }
+
+  toggleDropdown(){
+    this.showDropDown = !this.showDropDown;
+  }
+
+  changeFont(event:any){
+    this.toggleDropdown()
+    switch (event.target.innerText.toLowerCase()) {
+        case 'mono':
+            this.selectedFont = {name:'mono', value:`"Inter", sans-serif`}
+            
+            break;
+        case 'sans serif':
+            this.selectedFont = {name:'sans serif', value:`"Lora", serif`}
+            
+            break;
+        case 'serif':
+            this.selectedFont = {name:'serif', value:`"Inconsolata", monospace`}
+            
+            break;
+    
+        default:
+            break;
+    }
   }
 }
