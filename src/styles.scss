@@ -17,11 +17,7 @@ html, body{
     margin: 0;
     height: 100%;
 }
-.heading-l{
-    font-size: 34px;
-    line-height: 72px;
-    font-weight: bold;
-}
+
 .heading-m{
     font-size: 1.5rem;
     line-height: 1.2;
@@ -29,6 +25,13 @@ html, body{
 .heading-s{
     font-size: 20px;
     line-height: 24px;
+}
+
+.heading-l{
+    font-size: 2.5rem;
+    line-height: 72px;
+    font-weight: 800;
+    letter-spacing: 0.15rem;
 }
 .body-m{
     font-size: 18px;
@@ -171,4 +174,50 @@ li::marker {
 }
 .error-message {
     font-size: 1.2rem;
+}
+
+
+.components-container{
+    // overflow-y: scroll;
+    height: 100vh;
+    padding: 1.5rem;
+}
+.media-query-container{
+    height: 100%;
+    app-search-bar{
+        margin: 0 1.5rem;
+    }
+    // app-dictionary-main{
+        
+    // }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .components-container{
+        height: 100vh;
+        padding: 3rem 20rem 2rem 20rem;
+    }
+    .heading-l{
+        font-size: 5.5rem;
+        line-height: 72px;
+        font-weight: 800;
+        letter-spacing: 0.3rem;
+        margin-bottom: 2.2rem;
+    }
+
+.heading-m{
+    font-size: 1.5rem;
+    line-height: 29px;
+}
+.heading-s{
+    font-size: 20px;
+    line-height: 24px;
+}
+.body-m{
+    padding: 0 ;
+    font-size: 18px;
+    line-height: 24px;
+}
 }

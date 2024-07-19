@@ -31,12 +31,12 @@
                         </p>
                     }
                 </ul>
-                <div class="synonyms flex-it w-100">
-                    @if(meaning.synonyms?.length){
-                        <span class="synonym-name heading-s">Synonyms</span>
-                    }
+                @if(meaning.synonyms?.length){
+                    <p class="synonym-name heading-s">Synonyms</p>
+                }
+                <div class="synonyms">
                     @for (synonym of meaning.synonyms; track synonym;) {
-                        <span class="synonym-list heading-s">{{synonym}}</span>
+                        <p class="synonym-list heading-s">{{synonym}}</p>
                     }
                 </div>
             </div>
