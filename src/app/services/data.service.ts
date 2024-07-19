@@ -7,12 +7,13 @@ import { responseData, Respose404Error } from '../interfaces/data';
 })
 export class DataService {
   searchTerm:string='';
+  validation:boolean= false;
   lightThemeSet:boolean = false;
   currentTheme:string='light-mode';
-  selectedFont={name:'mono', value:""}
-  fontFamilies:string[]=['sans serif','serif','mono']
+  selectedFont={name:'serif', value:""}
+  fontFamilies:string[]=['serif','sans serif','mono']
   showDropDown:boolean = false
-  
+
   httpError:Respose404Error={
     message:'',
     title:'',
@@ -92,7 +93,18 @@ export class DataService {
     
 
   constructor(private apiService:ApiService) { }
-  getNewWord(){
+
+  getNewWord(word?:any){
+    this.httpError={
+        message:'',
+        title:'',
+        resolution:''
+      }
+    if ( word?.target.innerText) {
+        this.searchTerm =  word?.target.innerText
+    }
+   if (this.searchTerm.length) {
+    this.validation = false
     this.apiService.getWord(this.searchTerm).subscribe(
         (res)=>{
             this.currentWord=res[0]; 
@@ -102,13 +114,21 @@ export class DataService {
                     return;
                 }
             }
-            console.log(res)
         },
         (err) => {
             this.httpError = err.error;
-            console.log(err.error.message)
+            // console.log(err)
         }
-  )}
+  )
+   }else{
+    this.validation = true
+    setTimeout(() => {
+        this.validation = false 
+    }, 2000);
+   }
+}
+
+ 
   toggleTheme(){
     this.lightThemeSet = !this.lightThemeSet
     this.lightThemeSet ?
@@ -130,16 +150,16 @@ export class DataService {
   changeFont(event:any){
     this.toggleDropdown()
     switch (event.target.innerText.toLowerCase()) {
-        case 'mono':
-            this.selectedFont = {name:'mono', value:`"Inter", sans-serif`}
-            
-            break;
         case 'sans serif':
-            this.selectedFont = {name:'sans serif', value:`"Lora", serif`}
+            this.selectedFont = {name:'san serif', value:`"Inter", sans serif`}
             
             break;
         case 'serif':
-            this.selectedFont = {name:'serif', value:`"Inconsolata", monospace`}
+            this.selectedFont = {name:'serif', value:`"Lora", serif`}
+            
+            break;
+        case 'mono':
+            this.selectedFont = {name:'mono', value:`"Inconsolata", monospace`}
             
             break;
     

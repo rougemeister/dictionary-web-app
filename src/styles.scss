@@ -93,8 +93,9 @@ li::marker {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 48px;
+        height: 58px;
         border-radius: 1rem;
+        border: 1px solid var(--grey-level-8);
         background-color: var(--grey-level-5);
         padding: 0 16px;
         
@@ -104,7 +105,15 @@ li::marker {
             background-color: transparent;
             color: white;
             font-weight: bold;
+            font-family: inherit;
+            input::placeholder{
+                font-family: inherit;
+
+            }
         }
+
+
+
         input:focus{
             outline: none;
         }
@@ -125,8 +134,9 @@ li::marker {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    height: 58px;
     border-radius: 1rem;
+    border: 1px solid var(--grey-level-1);
     background-color: var(--grey-level-1);
     padding: 0 16px;
     
@@ -136,12 +146,19 @@ li::marker {
         border: none;
         background-color: transparent;
         font-weight: bold;
-    }
-    input:focus{
         outline: none;
+        input::placeholder{
+            font-family: inherit;
+
+        }
     }
+   
 }
 
+.search-container:hover,
+.search-container:active{
+    border: 1px solid var(--voilet);
+}
 
 
 .link {
