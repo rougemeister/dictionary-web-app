@@ -25,7 +25,11 @@
 }
 
 .synonyms{
-    flex-direction: column;
+    display: flex;
+    column-gap: 25px;
+    row-gap: 5px;
+   width: 300px;
+   flex-wrap: wrap;
 }
 .hr{
     height: 1px;
