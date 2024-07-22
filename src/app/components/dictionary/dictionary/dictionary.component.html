@@ -36,7 +36,7 @@
                 }
                 <div class="synonyms">
                     @for (synonym of meaning.synonyms; track synonym;) {
-                        <p class="synonym-list heading-s">{{synonym}}</p>
+                        <p (click)="dataService.getNewWord($event)" class="synonym-list heading-s">{{synonym}}</p>
                     }
                 </div>
             </div>
