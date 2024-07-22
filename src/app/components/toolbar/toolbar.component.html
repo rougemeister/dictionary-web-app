@@ -8,7 +8,7 @@
         <div class="drop-down">
             <div [class]="dataService.showDropDown ? 'show':'hide'" class="select-dropdown flex-it">
                 @for (font of dataService.fontFamilies; track font) {
-                    <span (click)="dataService.changeFont($event)" class="heading-s">{{font}}</span>
+                    <span (click)="dataService.changeFont($event)" [style.fontFamily]="font" class="heading-s">{{font}}</span>
                 }
             </div>
         </div>
