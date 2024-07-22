@@ -10,8 +10,8 @@ export class DataService {
   validation:boolean= false;
   lightThemeSet:boolean = false;
   currentTheme:string='light-mode';
-  selectedFont={name:'serif', value:""}
-  fontFamilies:string[]=['serif','sans serif','mono']
+  selectedFont={name:'sans serif', value:""}
+  fontFamilies:string[]=['sans serif','serif','mono']
   showDropDown:boolean = false
 
   httpError:Respose404Error={
