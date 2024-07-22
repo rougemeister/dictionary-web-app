@@ -1,0 +1,8 @@
+.scroll {
+    overflow-y: scroll;
+    height: 72vh; /* or any height you prefer */
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+

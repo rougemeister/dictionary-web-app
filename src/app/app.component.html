@@ -1,7 +1,7 @@
 <div [class]="dataService.currentTheme" [style.fontFamily]="dataService.selectedFont.value" class="components-container">
-    <div class="media-query-container">
         <app-toolbar1></app-toolbar1>
         <app-search-bar></app-search-bar>
-        <app-dictionary-main></app-dictionary-main>
-    </div>
+        <div class="scroll">
+            <app-dictionary-main></app-dictionary-main>
+        </div>
  </div>
